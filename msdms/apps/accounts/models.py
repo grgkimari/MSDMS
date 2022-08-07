@@ -25,10 +25,9 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 class CustomUser(AbstractUser):
-    username = None
+    username = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(verbose_name='email address', unique=True,max_length=100)
-    level = models.CharField(verbose_name="level", default="Very Easy", max_length=20 )
-    currentScore = models.IntegerField(verbose_name="currentScore", default = 0)
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

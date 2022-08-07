@@ -3,5 +3,21 @@
 Home
 {% endblock %}
 {% block content %}
-<h1>Home Page</h1>
+<nav>
+    <ul>
+        <li><a href="{% url 'login' %}">Log in</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <div>
+            <div><h4>Product name</h4></div>
+        </div>
+        <div>
+            <div>Product image</div>
+            <div>Product description and price</div>
+        </div>
+    </section>
+</main>
 {% endblock %}
